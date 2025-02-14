@@ -122,8 +122,9 @@ def main():
 
     finally:
         # シリアルポートを閉じる
-        if 'ser' in locals() and ser.is_open:
+        if 'ser' in locals() and ser_xy.is_open and ser_z.is_open:
             ser_xy.close()
+            ser_z.close()
             print(f"シリアルポート {comport_xy} を閉じました。")
 
 if __name__ == "__main__":
